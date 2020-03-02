@@ -21,7 +21,7 @@ def game_controller():
     highsc = Scoreboard(width*0.78)
     counter = 0
 
-    # groups sprites together?
+    # groups sprites together
     cacti = pygame.sprite.Group()
     pteras = pygame.sprite.Group()
     clouds = pygame.sprite.Group()
@@ -49,7 +49,7 @@ def game_controller():
 
     # runs while game is not quit
     while not gameQuit:
-        while startMenu: # does nothing at start menu
+        while startMenu:
             pass
         while not gameOver:
             if pygame.display.get_surface() == None:
@@ -181,6 +181,7 @@ def game_controller():
 
     pygame.quit()
     quit()
+
 
 def intro_screen():
     """
