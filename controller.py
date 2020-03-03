@@ -11,6 +11,7 @@ checkPoint_sound = pygame.mixer.Sound('sprites/checkPoint.wav')
 
 
 def game_controller():
+<<<<<<< HEAD
     global high_score #tracks highest score across multiple game plays
     gamespeed = 4 #initialize game speed
     playerDino = Dino(44,47) #creates a dino object
@@ -25,6 +26,19 @@ def game_controller():
     gameQuit = ?
 
     
+=======
+    global high_score
+    gamespeed = 4
+    startMenu = False
+    gameOver = False
+    gameQuit = False
+    playerDino = Dino(44,47)
+    new_ground = Ground(-1*gamespeed)
+    scb = Scoreboard()
+    highsc = Scoreboard(width*0.78)
+    counter = 0
+
+>>>>>>> dbb5835a43040f5b18aa230cad81b0592eda1e2a
     # groups sprites together
     cacti = pygame.sprite.Group()
     pteras = pygame.sprite.Group()
@@ -52,7 +66,12 @@ def game_controller():
 
     # runs while game is not quit
     while not gameQuit:
+<<<<<<< HEAD
         #runs while game is not over
+=======
+        while startMenu:
+            pass
+>>>>>>> dbb5835a43040f5b18aa230cad81b0592eda1e2a
         while not gameOver:
             if pygame.display.get_surface() == None:
                 print("Couldn't load display surface")
@@ -211,10 +230,17 @@ def game_controller():
                 pygame.display.update() #update the display
             clock.tick(FPS)
 
+<<<<<<< HEAD
     pygame.quit() #quit pygame
     quit() #quit the program
 
 
+=======
+    pygame.quit()
+    quit()
+
+
+>>>>>>> dbb5835a43040f5b18aa230cad81b0592eda1e2a
 def intro_screen():
     """
     What you'll need for a basic intro screen:
@@ -258,10 +284,17 @@ def intro_screen():
                     # Write an if statement to make your dino jump on a keypress of your choice
                     temp_dino.isJumping = ? # Should this be T/F?
                     temp_dino.movement = -1 * temp_dino.jumpSpeed
+<<<<<<< HEAD
 
         # Update your dino to show it jumping/transitioning to the gameplay screen
 
 
+=======
+
+        # Update your dino to show it jumping/transitioning to the gameplay screen
+
+
+>>>>>>> dbb5835a43040f5b18aa230cad81b0592eda1e2a
         ### TODO #6: Load the game screen ###
         if pygame.display.get_surface() != None:
 

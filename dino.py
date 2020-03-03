@@ -1,39 +1,39 @@
 from display import *
 
-
-#gravity = 0.6
-#screen_size = (width, height) = (600, 150)
-#screen = pygame.display.set_mode(screen_size)
-
 class Dino():
     def __init__(self, size_x = -1, size_y = -1):
-        # loads standing imagesaur sprites
-        self.images, self.rect = load_sprites('dino.png', 5, 1, size_x, \
+        # This loads standing dinosaur sprites
+        ### TODO 1: Fill in missing dinosaur sprite file
+        self.images, self.rect = load_sprites('?.png', 5, 1, size_x, \
                                                  size_y)
-        # loads ducking imagesaur sprites
-        self.images1, self.rect1 = load_sprites('dino_ducking.png',\
+        # This loads ducking dinosaur sprites
+        ### TODO 2: Fill in missing ducking dinosaur sprite file
+        self.images1, self.rect1 = load_sprites('?.png',\
                                                         2, 1, 59, size_y)
-        self.rect.bottom = int(0.98*height) # sets bottom y-pos ?
-        self.rect.left = width/15 # sets left pos of imagesaur
 
-        self.image = self.images[0] # initial imagesaur sprite
+        self.rect.bottom = int(0.98*height) # sets bottom y-pos
+        self.rect.left = width/15 # sets left pos of dinosaur
+
+        self.image = self.images[0] # initial dinosaur sprite
 
         self.index = 0 # sprite index in sprite sheet
         self.counter = 0 # keeps track of time passed
         self.score = 0 # keeps track of score
 
-        # initial state conditions
-        self.isJumping = False
-        self.isDead = False
-        self.isDucking = False
-        self.isBlinking = False
+        # Initial state conditions
+        ### TODO 3: What should these boolean values be?
+        self.isJumping = ?
+        self.isDead = ?
+        self.isDucking = ?
+        self.isBlinking = ?
 
-        self.movement = [0, 0] # x/y movement of imagesaur
+        self.movement = [0, 0] # x/y movement of dinosaur
         self.jumpSpeed = 11.5
 
-        # stores width of ducking and standing dino
-        self.standing_width = self.rect.width
-        self.duck_width = self.rect1.width
+        # Stores width of ducking and standing dino
+        ### TODO 4: What attribute sets width for rect and rect1?
+        self.standing_width = self.rect.?
+        self.duck_width = self.rect1.?
 
     # draws out dino on screen
     def draw(self):
@@ -66,7 +66,8 @@ class Dino():
                 self.index = (self.index +1) % 2 + 2
 
         if self.isDead: # changes sprite to dead dino
-            self.index = 4
+            ### TODO 5: Which index dinosaur is the dead dinosaur in the spritesheet?
+            self.index = ?
 
         if not self.isDucking:
             self.image = self.images[self.index] # adjusts sprite accordingly
@@ -76,14 +77,14 @@ class Dino():
             self.image = self.images1[(self.index) % 2]
             self.rect.width = self.duck_width
 
-        self.rect = self.rect.move(self.movement) # moves dino accordingly # Changed dino to rect -Alan :)
+        self.rect = self.rect.move(self.movement) # moves dino accordingly
         self.checkbounds() # ensures dino stays on screen
 
         if not self.isDead and self.counter % 7 == 6 \
                 and self.isBlinking == False:
             self.score += 1 # score increases every update
-            #if self.score % 100 == 0 and self.score != 0: # checkpoint reached
-                #if pygame.mixer.get_init() != None:
-                    # checkPoint_sound.play()
+            if self.score % 100 == 0 and self.score != 0: # checkpoint reached
+                if pygame.mixer.get_init() != None:
+                     checkPoint_sound.play()
 
         self.counter += 1 # increases time counter by 1
