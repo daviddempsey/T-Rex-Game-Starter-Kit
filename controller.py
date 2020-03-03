@@ -190,22 +190,25 @@ def intro_screen():
         - Display static images of the ground, logo, and callout image
         - Keep track of whether the game has started
     """
-    ### TODO: Displaying the dinosaur ###
-    # Initialize your T-Rex with a sizex of 44 and sizey of 47
-    gameStart = False
+    ### TODO #1: Displaying the dinosaur ###
+    temp_dino = ? # Initialize your T-Rex with a sizex of 44 and sizey of 47
+    gameStart = ? #Should this be T/F?
 
-    ### TODO: Loading the call out image ###
-    # Create a variable to load your call out image with a width of 196 and height of 45
+    ### TODO #2: Loading the call out image ###
+    callout, callout_rect = ? # width = 196 height = 45
+
     # Set the left property to scale the width by 0.05
     # Set the top property to scale the height by 0.4
     
-    ### TODO: Loading the ground sprite ###
-    # Create a variable to load your ground sprite with a horizontal value of 15, vertical value of 1, width of -1, and height of -1
+    ### TODO #3: Loading the ground sprite ###
+    temp_ground, temp_ground_rect = ? # horizontal = 15, vertical = 1, width = -1, height = -1
+    
     # Set the left property to scale the width by 0.05
     # Set the bottom property to equal the height of the sprite
 
-    ### TODO: Loading the logo image ###
-    # Create a variable to load your logo image with a width of 240 and height of 40
+    ### TODO #4: Loading the logo image ###
+    logo, logo_rect = ? # width = 240, height = 40
+    
     # Set the centerx property to scale the width by 0.06
     # Set the centery property to scale the height by 0.06
     
@@ -219,26 +222,25 @@ def intro_screen():
                 if event.type == pygame.QUIT:
                     return True
                 if event.type == pygame.KEYDOWN:
-                    ### TODO: Make the dinosaur jump on a key press to start the game ###
+                    ### TODO #5: Make the T-Rex jump on a key press to start the game ###
                     # Write an if statement to make your dino jump on a keypress of your choice
-                    # Set the dino's isJumping property so that the dino will jump
-                    # Set dino's movement property at index 1 to -1 of its jumpSpeed property.
+                    temp_dino.isJumping = ? # Should this be T/F?
+                    temp_dino.movement = -1 * temp_dino.jumpSpeed
 
         # Update your dino to show it jumping/transitioning to the gameplay screen
 
 
-        ### TODO: Load the game screen ###
+        ### TODO #6: Load the game screen ###
         if pygame.display.get_surface() != None:
-            # Fill the screen background using background_color
-            # Display the ground partially using its 0 index and its rect property
-            # Display BOTH the logo and call out images
-            # Draw your dino onto the screen
-            # Update the screen's display
+
+
+
+
 
         clock.tick(FPS)
 
         # Write an if statement under this comment to start the game when your dino lands after jumping
-            gameStart = True
+            gameStart = ? # Should this be T/F?
 
 def main():
     isGameQuit = intro_screen()
