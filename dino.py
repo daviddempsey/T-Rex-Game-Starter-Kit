@@ -1,10 +1,5 @@
 from display import *
 
-
-#gravity = 0.6
-#screen_size = (width, height) = (600, 150)
-#screen = pygame.display.set_mode(screen_size)
-
 class Dino():
     def __init__(self, size_x = -1, size_y = -1):
         # This loads standing dinosaur sprites
