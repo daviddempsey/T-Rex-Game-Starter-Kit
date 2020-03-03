@@ -3,11 +3,11 @@ from display import *
 class Dino():
     def __init__(self, size_x = -1, size_y = -1):
         # This loads standing dinosaur sprites
-        #TODO 1: Fill in missing dinosaur sprite file
+        ### TODO 1: Fill in missing dinosaur sprite file
         self.images, self.rect = load_sprites('?.png', 5, 1, size_x, \
                                                  size_y)
         # This loads ducking dinosaur sprites
-        # TODO 2: Fill in missing ducking dinosaur sprite file
+        ### TODO 2: Fill in missing ducking dinosaur sprite file
         self.images1, self.rect1 = load_sprites('?.png',\
                                                         2, 1, 59, size_y)
 
@@ -21,7 +21,7 @@ class Dino():
         self.score = 0 # keeps track of score
 
         # Initial state conditions
-        # TODO 3: What should these boolean values be?
+        ### TODO 3: What should these boolean values be?
         self.isJumping = ?
         self.isDead = ?
         self.isDucking = ?
@@ -31,7 +31,7 @@ class Dino():
         self.jumpSpeed = 11.5
 
         # Stores width of ducking and standing dino
-        # TODO 4: What attribute sets width for rect and rect1?
+        ### TODO 4: What attribute sets width for rect and rect1?
         self.standing_width = self.rect.?
         self.duck_width = self.rect1.?
 
@@ -66,7 +66,7 @@ class Dino():
                 self.index = (self.index +1) % 2 + 2
 
         if self.isDead: # changes sprite to dead dino
-            # TODO 5: Which index dinosaur is the dead dinosaur in the spritesheet?
+            ### TODO 5: Which index dinosaur is the dead dinosaur in the spritesheet?
             self.index = ?
 
         if not self.isDucking:
