@@ -4,16 +4,18 @@ from display import *
 class Ground():
     def __init__(self,speed=-5):
 
-        #loadimageandtherectanglearoundtheimage
-        self.image,self.rect = load_image('ground.png')
-        self.image1,self.rect1 = load_image('ground.png')
+        # This loads the ground
+        ### TODO 1: Fill in the missing ground sprite file
+        self.image,self.rect = load_image('?.png')
+        self.image1,self.rect1 = load_image('?.png')
 
         #placethegrondatthebottomofthescreen
         self.rect.bottom = self.rect1.bottom = height
         self.rect1.left = self.rect.right#connect the two grounds
 
         #setthespeed
-        self.speed = speed
+        ### TODO 2: Set this to the speed given as a parameter
+        self.speed = ?
 
     def draw(self):
         #renderthegroundontothescreen
