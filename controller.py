@@ -88,7 +88,7 @@ def game_controller():
                                 playerDino.movement[?] = -1*playerDino.jumpSpeed
 
                         ###TODO 6: Write the conditional for ducking dinosaur
-                        if (?):
+                        if ?:
                             if not (playerDino.isJumping and playerDino.isDead):
                                 ###TODO 7: What should the boolean value this variable be?
                                 playerDino.isDucking = ?
